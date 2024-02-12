@@ -1,0 +1,31 @@
+CREATE TABLE "futbolteam" (
+  "team_id" integer PRIMARY KEY,
+  "name_player" varchar,
+  "coach" integer,
+  "country" integer
+);
+
+CREATE TABLE "equipment" (
+  "id" integer PRIMARY KEY,
+  "name" varchar
+);
+
+CREATE TABLE "result" (
+  "id" integer PRIMARY KEY,
+  "winner" integer,
+  "goals" integer,
+  "yellow_card" integer,
+  "red_card" integer
+);
+
+CREATE TABLE "phases" (
+  "id" integer PRIMARY KEY,
+  "star_date" timestamp,
+  "star_end" timestamp
+);
+
+ALTER TABLE "futbolteam" ADD FOREIGN KEY ("team_id") REFERENCES "equipment" ("id");
+
+ALTER TABLE "result" ADD FOREIGN KEY ("winner") REFERENCES "equipment" ("id");
+
+ALTER TABLE "result" ADD FOREIGN KEY ("id") REFERENCES "phases" ("id");
