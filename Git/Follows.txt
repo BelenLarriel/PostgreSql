@@ -27,3 +27,4 @@ ALTER TABLE "posts" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
 ALTER TABLE "follows" ADD FOREIGN KEY ("following_user_id") REFERENCES "users" ("id");
 
 ALTER TABLE "follows" ADD FOREIGN KEY ("followed_user_id") REFERENCES "users" ("id");
+
